@@ -1,19 +1,3 @@
-// functions
-
-window.addEventListener("DOMContentLoaded", () => {
-  testFetch();
-});
-
-function testFetch() {
-  fetch("http://localhost:3000/activities")
-    .then((res) => res.json())
-    .then((data) => console.log(data));
-}
-
-function handleAcitivity(){
-    console.log("n")
-}
-
 // DOM Manipulation
 
 let div = document.getElementById("main-div");
@@ -41,15 +25,29 @@ circleArr.map((circle) => {
     e.preventDefault();
     console.log(e, parseInt(circle.innerText));
     if (e && parseInt(circle.innerText) < 3) {
-  
       firstResponse.textContent += "You don't need me right now.";
-      div.style.display = "none"
+      div.style.display = "none";
     } else {
-        handleAcitivity()
+      div.style.display = "none";
+      handleAcitivity();
     }
-      
-
   });
 });
 
 div.append(circleWrapper);
+
+// FUNCTIONS
+
+window.addEventListener("DOMContentLoaded", () => {
+  testFetch();
+});
+
+function testFetch() {
+  fetch("http://localhost:3000/activities")
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+}
+
+function handleAcitivity() {
+  console.log("n");
+}
