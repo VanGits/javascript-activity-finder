@@ -1,0 +1,50 @@
+{
+    "activities": [
+        {
+            "activity": "Shred old documents you don't need anymore",
+            "type": "busywork",
+            "participants": 1,
+            "price": 0,
+            "link": "",
+            "key": "2430066",
+            "accessibility": 0
+          },
+          {
+            "activity": "Paint the first thing you see",
+            "type": "recreational",
+            "participants": 1,
+            "price": 0.25,
+            "link": "",
+            "key": "1162360",
+            "accessibility": 0.2
+          },
+          {
+            "activity": "Fill out a basketball bracket",
+            "type": "recreational",
+            "participants": 1,
+            "price": 0,
+            "link": "",
+            "key": "7806284",
+            "accessibility": 0.1
+          },
+          {
+            "activity": "Prepare a dish from a foreign culture",
+            "type": "cooking",
+            "participants": 1,
+            "price": 0.2,
+            "link": "",
+            "key": "8061754",
+            "accessibility": 0.3
+          },
+          {
+            "activity": "Buy a new house decoration",
+            "type": "recreational",
+            "participants": 1,
+            "price": 0.4,
+            "link": "",
+            "key": "3456114",
+            "accessibility": 0.3
+          }
+    ]
+ 
+}

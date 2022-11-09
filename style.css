@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1038%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='rgba(235%2c 235%2c 235%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c698.568C130.413%2c702.315%2c179.935%2c520.005%2c281.797%2c438.484C369.558%2c368.248%2c494.703%2c348.187%2c555.747%2c253.801C620.418%2c153.808%2c651.6%2c26.06%2c623.353%2c-89.625C595.865%2c-202.201%2c477.149%2c-260.49%2c407.55%2c-353.144C330.992%2c-455.062%2c309.49%2c-606.888%2c194.106%2c-661.063C76.864%2c-716.111%2c-71.393%2c-692.953%2c-185.445%2c-631.569C-292.423%2c-573.992%2c-338.092%2c-450.009%2c-396.231%2c-343.336C-443.247%2c-257.07%2c-485.221%2c-168.686%2c-491.171%2c-70.62C-496.81%2c22.322%2c-466.82%2c110.83%2c-428.947%2c195.893C-390.759%2c281.664%2c-332.524%2c351.167%2c-271.58%2c422.586C-186.069%2c522.794%2c-131.68%2c694.785%2c0%2c698.568' fill='%23999999'%3e%3c/path%3e%3cpath d='M1920 1702.72C2083.35 1704.373 2248.951 1893.9389999999999 2388.307 1808.699 2526.601 1724.109 2454.968 1501.063 2502.877 1346.191 2542.82 1217.07 2637.941 1110.532 2646.016 975.615 2655.2200000000003 821.827 2651.006 650.418 2551.563 532.747 2451.9139999999998 414.831 2282.467 388.922 2129.955 364.957 1991.932 343.26800000000003 1858.9279999999999 380.006 1720.99 402.23400000000004 1561.357 427.95799999999997 1377.034 397.144 1257.1190000000001 505.61 1135.3890000000001 615.7180000000001 1106.319 798.277 1101.7469999999998 962.353 1097.473 1115.737 1172.299 1252.833 1232.3609999999999 1394.034 1294.114 1539.21 1313.8200000000002 1734.67 1457.747 1799.28 1604.32 1865.078 1759.344 1701.094 1920 1702.72' fill='white'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1038'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  animation: fadeIn ease 2s;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.main-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 800px;
+}
+
+#main-div, #main-responses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 500ms ease;
+  max-width: 1500px;
+}
+
+#main-div .h2 {
+  margin: 24px;
+}
+
+#main-responses h1{
+    font-size: 32px;
+    
+    
+}
+
+.circleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  width: 70px;
+  height: 70px;
+  margin: 12px;
+  border-radius: 50%;
+  border: 3px solid #33a474;
+  transition: 300ms all ease;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle:hover {
+  background-color: #33a474;
+  cursor: pointer;
+}
+
+
