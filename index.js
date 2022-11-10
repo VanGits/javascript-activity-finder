@@ -49,14 +49,16 @@ function activityData(data) {
   let acceptedRes = document.querySelector(".response-2");
   let suggestActivity = document.querySelector(".activity-response");
   let typeActivity = document.querySelector(".type-response");
+  let comments = document.querySelector(".comment-section");
 
   acceptedResDiv.style.opacity = "1";
   acceptedResDiv.style.display = "flex";
   acceptedRes.textContent += "Okay, here are some activities";
+  comments.style.display += "flex";
   let randomItem = data[Math.floor(Math.random() * data.length)];
   suggestActivity.textContent += randomItem.activity;
   typeActivity.textContent += randomItem.type.toUpperCase();
-  
+
   refreshActivity.addEventListener("click", (e) => {
     e.preventDefault();
     let randomAct = data[Math.floor(Math.random() * data.length)];
