@@ -5,6 +5,7 @@ let responseDiv = document.getElementById("main-responses");
 let circleWrapper = document.createElement("div");
 let firstResponse = document.querySelector(".response-1");
 let refreshActivity = document.querySelector(".arrow-wrapper");
+let comments = document.querySelector(".comment-section");
 
 circleWrapper.classList.add("circleWrapper");
 let circleArr = [1, 2, 3, 4, 5];
@@ -38,6 +39,61 @@ div.append(circleWrapper);
 
 // FUNCTIONS
 
+
+
+let form = document.querySelector(".comment-form");
+
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(e) {
+ 
+  e.preventDefault()
+  const input = document.querySelector("input#comment-input");
+
+  const comment = {
+    comment: input.value,
+  };
+  if (input.value !== "") {
+    
+    postComments(comment);
+  }
+  
+}
+
+function postComments(commentObj) {
+  fetch("http://localhost:3000/comments", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(commentObj),
+  })
+
+ 
+}
+function getComments(){
+  fetch("http://localhost:3000/comments")
+  .then(res => res.json())
+  .then(comments => displayComments(comments))
+
+}
+getComments()
+
+function displayComments(comments){
+  comments.map(comment => {
+    let comments = document.querySelector(".comment-section");
+    let showComment = document.createElement("div")
+    let commentText = document.createElement("h4")
+
+    commentText.textContent += comment.comment
+    showComment.appendChild(commentText)
+
+    comments.appendChild(showComment)
+  })
+}
+
+
+
 function handleActivity() {
   fetch("http://localhost:3000/activities")
     .then((res) => res.json())
@@ -49,7 +105,7 @@ function activityData(data) {
   let acceptedRes = document.querySelector(".response-2");
   let suggestActivity = document.querySelector(".activity-response");
   let typeActivity = document.querySelector(".type-response");
-  let comments = document.querySelector(".comment-section");
+
 
   acceptedResDiv.style.opacity = "1";
   acceptedResDiv.style.display = "flex";
