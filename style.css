@@ -205,16 +205,18 @@ i{
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 }
 
 input{
   border: none;
   
   width: 100%;
-  height: 100px;
+  height: 50px;
   background-color: #ffffff;
   border: 1px solid grey;
   border-radius: 3px;
+  padding: 12px;
 
 }
 
@@ -228,7 +230,7 @@ input{
 }
 
 .comment-section div{
-  background-color: #33a474;
+  background-color: #df4040;
   color: white;
   max-width: 500px;
   width: 100%;
@@ -237,6 +239,24 @@ input{
   justify-content: center;
   margin: 24px;
   padding: 24px;
+}
+button{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  background-color: #33a474;
+  color: white;
+  border: none;
+}
+
+.fa-paper-plane{
+  font-size: 24px;
+  position: relative;
 }
 
 
