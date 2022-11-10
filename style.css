@@ -136,7 +136,7 @@ i{
   width: 100%;
   height: 60px;
   background-color: #df4040;
-  display: flex;
+
   align-items: center;
   justify-content: center;
   color: white;
@@ -186,7 +186,7 @@ i{
 .comment-section{
   max-width: 600px;
   width: 100%;
-  display: none;
+  display: flex;
   
   align-items: center;
   justify-content: center;
@@ -259,5 +259,8 @@ button{
   position: relative;
 }
 
+input:focus {
+  outline-width: 0;
+}
 
 

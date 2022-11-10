@@ -39,60 +39,46 @@ div.append(circleWrapper);
 
 // FUNCTIONS
 
+let form = document.querySelector("#comment-form");
 
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-let form = document.querySelector(".comment-form");
-
-form.addEventListener("submit", handleSubmit);
-
-function handleSubmit(e) {
- 
-  e.preventDefault()
   const input = document.querySelector("input#comment-input");
 
   const comment = {
     comment: input.value,
   };
   if (input.value !== "") {
-    
-    postComments(comment);
+    fetch("http://localhost:3000/comments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(comment),
+    });
   }
-  
-}
+});
 
-function postComments(commentObj) {
-  fetch("http://localhost:3000/comments", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(commentObj),
-  })
-
- 
-}
-function getComments(){
+function getComments() {
   fetch("http://localhost:3000/comments")
-  .then(res => res.json())
-  .then(comments => displayComments(comments))
-
+    .then((res) => res.json())
+    .then((comments) => displayComments(comments));
 }
-getComments()
+getComments();
 
-function displayComments(comments){
-  comments.map(comment => {
+function displayComments(comments) {
+  comments.map((comment) => {
     let comments = document.querySelector(".comment-section");
-    let showComment = document.createElement("div")
-    let commentText = document.createElement("h4")
+    let showComment = document.createElement("div");
+    let commentText = document.createElement("h4");
 
-    commentText.textContent += comment.comment
-    showComment.appendChild(commentText)
+    commentText.textContent += comment.comment;
+    showComment.appendChild(commentText);
 
-    comments.appendChild(showComment)
-  })
+    comments.appendChild(showComment);
+  });
 }
-
-
 
 function handleActivity() {
   fetch("http://localhost:3000/activities")
@@ -106,11 +92,10 @@ function activityData(data) {
   let suggestActivity = document.querySelector(".activity-response");
   let typeActivity = document.querySelector(".type-response");
 
-
   acceptedResDiv.style.opacity = "1";
   acceptedResDiv.style.display = "flex";
   acceptedRes.textContent += "Okay, here are some activities";
-  comments.style.display += "flex";
+
   let randomItem = data[Math.floor(Math.random() * data.length)];
   suggestActivity.textContent += randomItem.activity;
   typeActivity.textContent += randomItem.type.toUpperCase();
