@@ -4,6 +4,9 @@ let div = document.getElementById("main-div");
 let responseDiv = document.getElementById("main-responses");
 let circleWrapper = document.createElement("div");
 let firstResponse = document.querySelector(".response-1");
+let refreshActivity = document.querySelector(".arrow-wrapper")
+
+
 circleWrapper.classList.add("circleWrapper");
 let circleArr = [1, 2, 3, 4, 5];
 
@@ -28,7 +31,8 @@ circleArr.map((circle) => {
       div.style.display = "none";
     } else {
       div.style.display = "none";
-      handleActivity(circle);
+      refreshActivity.style.display = "flex"
+      handleActivity()
     }
   });
 });
@@ -38,17 +42,29 @@ div.append(circleWrapper);
 // FUNCTIONS
 
 window.addEventListener("DOMContentLoaded", () => {
-  testFetch();
+  ;
 });
 
-function testFetch() {
+function handleActivity() {
   fetch("http://localhost:3000/activities")
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then(data => activityData(data));
 }
 
-function handleActivity(circle) {
-  console.log("n");
+
+
+function activityData(data) {
+  let acceptedResDiv = document.getElementById("accepted-response");
+  let acceptedRes = document.querySelector(".response-2")
+  let suggestActivity = document.querySelector(".activity-response")
+  acceptedResDiv.style.opacity = "1"
+  acceptedResDiv.style.display = "flex"
+  acceptedRes.textContent += "Okay, here are some activities..."
+  
+  
+  for(let i = 0; i < data.length; i++){
+    console.log(data[i].activity)
+  }
 }
 
 let halfCircle = document.querySelector(".fa-circle-half-stroke");

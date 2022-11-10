@@ -42,11 +42,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   height: 800px;
 }
 
-#main-div, #main-responses {
+#main-div, #denied-response, #accepted-response {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,12 +56,30 @@ body {
   max-width: 1500px;
 }
 
+#accepted-response{
+  background-color: #33a474;
+  padding: 32px 32px;
+  border-radius: 8px;
+  opacity: 0;
+  display: none;
+  
+}
+
+#accepted-response h1{
+  color: white;
+}
+
 #main-div .h2 {
   margin: 24px;
   
 }
 
-#main-responses h1{
+#main-div{
+  position: relative;
+  margin-top: 24px;
+}
+
+#denied-response h1{
     font-size: 32px;
     color: #df4040;
     
@@ -100,8 +119,43 @@ i{
     margin: 24px;
 }
 
-.full{
-    display: none;
+.response-2{
+   color: #33a474;
+}
+
+.arrow-wrapper{
+  max-width: 60px;
+  width: 100%;
+  height: 60px;
+  background-color: #df4040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 50%;
+  margin-top: 24px;
+  display: none;
+  transition: all 500ms ease;
+  
+  
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(240deg);
+  }
+}
+.fa-arrow-rotate-right{
+  position: relative;
+  
+}
+
+.arrow-wrapper:hover{
+  animation: rotate 1000ms ease;
+  
 }
 
 
