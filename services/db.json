@@ -134,12 +134,81 @@
       "link": "",
       "key": "7265395",
       "accessibility": 0.05
+    },
+    {
+      "activity": "Hold a yard sale",
+      "type": "social",
+      "participants": 1,
+      "price": 0,
+      "link": "",
+      "key": "1432113",
+      "accessibility": 0.1
+    },
+    {
+      "activity": "Organize a bookshelf",
+      "type": "busywork",
+      "participants": 1,
+      "price": 0,
+      "link": "",
+      "key": "6098037",
+      "accessibility": 0
+    },
+    {
+      "activity": "Make homemade ice cream",
+      "type": "cooking",
+      "participants": 1,
+      "price": 0.2,
+      "link": "",
+      "key": "3818400",
+      "accessibility": 0.2
+    },
+    {
+      "activity": "Start a book you've never gotten around to reading",
+      "type": "relaxation",
+      "participants": 1,
+      "price": 0.1,
+      "link": "",
+      "key": "7114122",
+      "accessibility": 0.1
+    },
+    {
+      "activity": "Start a daily journal",
+      "type": "relaxation",
+      "participants": 1,
+      "price": 0,
+      "link": "",
+      "key": "8779876",
+      "accessibility": 0
+    },
+    {
+      "activity": "Start a collection",
+      "type": "recreational",
+      "participants": 1,
+      "price": 0,
+      "link": "",
+      "key": "1718657",
+      "accessibility": 0.5
+    },
+    {
+      "activity": "Go to the gym",
+      "type": "recreational",
+      "participants": 1,
+      "price": 0.2,
+      "link": "",
+      "key": "4387026",
+      "accessibility": 0.1
+    },
+    {
+      "activity": "Draw and color a Mandala",
+      "type": "relaxation",
+      "participants": 1,
+      "price": 0.05,
+      "link": "https://en.wikipedia.org/wiki/Mandala",
+      "key": "4614092",
+      "accessibility": 0.1
     }
   ],
   "comments": [
-    {
-      "comment": "Wow! I love this.",
-      "id": 1
-    }
+   
   ]
 }

@@ -5,7 +5,7 @@ let responseDiv = document.getElementById("main-responses");
 let circleWrapper = document.createElement("div");
 let firstResponse = document.querySelector(".response-1");
 let refreshActivity = document.querySelector(".arrow-wrapper");
-let comments = document.querySelector(".comment-section");
+let comments = document.querySelector(".comments-wrapper");
 
 circleWrapper.classList.add("circleWrapper");
 let circleArr = [1, 2, 3, 4, 5];
@@ -30,6 +30,7 @@ circleArr.map((circle) => {
     } else {
       div.style.display = "none";
       refreshActivity.style.display = "flex";
+      comments.style.display = "none"
       handleActivity();
     }
   });
