@@ -21,3 +21,6 @@ Find a bug or want to request a new feature? Please let me know by submitting an
 Here's a documentation on how to submit an issue:
 https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue
 
+## Contributing
+
+I welcome contributions from anyone.
