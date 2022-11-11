@@ -10,4 +10,5 @@ The Activity Finder application uses a db.json back-end to configure its Javascr
 - Toggle dark/ light mode
 
 
-![mainscreen](https://user-images.githubusercontent.com/98533984/201350263-29a59530-4a2c-4198-a396-b75c23800da5.png)
+
+![mainscreen](https://user-images.githubusercontent.com/98533984/201350448-74410598-a124-4377-aee6-98a38473f82c.png)
