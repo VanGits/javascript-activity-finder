@@ -138,7 +138,7 @@ function displayComments(comments) {
     let showComment = document.createElement("div");
     let commentText = document.createElement("h4");
 
-    // Add the objects comment added from post to h4 text content
+    // Add db.json's comment object to h4 text content
     commentText.textContent += text.comment;
     showComment.appendChild(commentText);
 
