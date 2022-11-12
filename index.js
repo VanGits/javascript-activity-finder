@@ -62,16 +62,23 @@ function activityData(data) {
   acceptedResDiv.style.display = "flex";
   acceptedRes.textContent += "Okay, here are some activities";
 
+  // Initialize random activity when page loads
   let randomItem = data[Math.floor(Math.random() * data.length)];
   suggestActivity.textContent += randomItem.activity;
   typeActivity.textContent += randomItem.type.toUpperCase();
 
   refreshActivity.addEventListener("click", (e) => {
     e.preventDefault();
+
+    // Change random activity by using a different variable
+
     let randomAct = data[Math.floor(Math.random() * data.length)];
 
     suggestActivity.textContent = "";
     typeActivity.textContent = "";
+
+    // Set new activity to the new random variable
+    
     suggestActivity.textContent += randomAct.activity;
     typeActivity.textContent += randomAct.type.toUpperCase();
   });
