@@ -133,12 +133,13 @@ getComments();
 // Display data to the DOM derived from function getComments
 
 function displayComments(comments) {
-  comments.map((comment) => {
+  comments.map((text) => {
     let comments = document.querySelector(".comment-section");
     let showComment = document.createElement("div");
     let commentText = document.createElement("h4");
 
-    commentText.textContent += comment.comment;
+    // Add the objects comment added from post to h4 text content
+    commentText.textContent += text.comment;
     showComment.appendChild(commentText);
 
     comments.appendChild(showComment);
