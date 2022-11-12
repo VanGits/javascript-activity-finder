@@ -22,8 +22,12 @@ let circleArr = [1, 2, 3, 4, 5];
 // Map array into dom elements
 
 circleArr.map((circle) => {
+
+  // Set a variable to store the array's numbers to put inside the circle
   let circleNumber = 0;
   circleNumber = circle;
+
+  // Create circle
   circle = document.createElement("div");
   circle.classList.add("circle");
   circle.innerText = circleNumber;
