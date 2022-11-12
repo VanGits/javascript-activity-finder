@@ -41,7 +41,7 @@ circleArr.map((circle) => {
       firstResponse.textContent += "You don't need me right now.";
       mainDiv.style.display = "none";
 
-      //handle response if boredness scale is more than 2
+      //handle response if boredness scale is more or equal to 3
     } else {
       mainDiv.style.display = "none";
       refreshActivity.style.display = "flex";
@@ -78,7 +78,7 @@ function activityData(data) {
     typeActivity.textContent = "";
 
     // Set new activity to the new random variable
-    
+
     suggestActivity.textContent += randomAct.activity;
     typeActivity.textContent += randomAct.type.toUpperCase();
   });
