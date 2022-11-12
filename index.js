@@ -19,7 +19,7 @@ let circleWrapper = document.createElement("div");
 circleWrapper.classList.add("circleWrapper");
 let circleArr = [1, 2, 3, 4, 5];
 
-// Map array into dom elements
+// Change array into dom elements
 
 circleArr.forEach((circle) => {
 
