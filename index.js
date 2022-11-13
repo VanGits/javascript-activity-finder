@@ -54,6 +54,7 @@ circleArr.forEach((circle) => {
     }
   });
 });
+// Retrieve activity data
 
 function handleActivity() {
   fetch("http://localhost:3000/activities")
