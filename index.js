@@ -49,7 +49,7 @@ circleArr.forEach((circle) => {
     } else {
       mainDiv.style.display = "none";
       refreshActivity.style.display = "flex";
-      comments.style.display = "none";
+      commentsWrapper.style.display = "none";
       handleActivity();
     }
   });
@@ -99,7 +99,7 @@ let form = document.querySelector("#comment-form");
 
 // Comment elements
 
-let comments = document.querySelector(".comments-wrapper");
+let commentsWrapper = document.querySelector(".comments-wrapper");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -109,7 +109,7 @@ form.addEventListener("submit", (e) => {
   const comment = {
     // set comment key to whatever was put in input (input.value)
 
-    comment: input.value,
+    commentInput: input.value,
   };
   if (input.value !== "") {
     fetch("http://localhost:3000/comments", {
@@ -135,15 +135,15 @@ getComments();
 
 function displayComments(comments) {
   comments.map((text) => {
-    let comments = document.querySelector(".comment-section");
+    let commentsDiv = document.querySelector(".comment-section");
     let showComment = document.createElement("div");
     let commentText = document.createElement("h4");
 
     // Add db.json's comment object to h4 text content
-    commentText.textContent += text.comment;
+    commentText.textContent += text.commentInput;
     showComment.appendChild(commentText);
 
-    comments.appendChild(showComment);
+    commentsDiv.appendChild(showComment);
   });
 }
 

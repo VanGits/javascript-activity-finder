@@ -209,17 +209,10 @@
     }
   ],
   "comments": [
+
     {
-      "comment": "Nice.",
-      "id": 1
-    },
-    {
-      "comment": "a",
+      "commentInput": "hello",
       "id": 2
-    },
-    {
-      "comment": "lda",
-      "id": 3
     }
   ]
 }
