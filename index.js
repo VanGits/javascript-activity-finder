@@ -22,7 +22,6 @@ let circleArr = [1, 2, 3, 4, 5];
 // Change array into dom elements
 
 circleArr.forEach((circle) => {
-
   // Set a variable to store the array's numbers to put inside the circle
   let circleNumber = 0;
   circleNumber = circle;
@@ -32,11 +31,13 @@ circleArr.forEach((circle) => {
   circle.classList.add("circle");
   circle.innerText = circleNumber;
   circleWrapper.appendChild(circle);
+  //append circles to circleWrapper
+
+  mainDiv.append(circleWrapper);
 
   // Circle mousedown event
 
   circle.addEventListener("mousedown", (e) => {
-   
     console.log(e, parseInt(circle.innerText));
 
     //handle response if boredness scale is less than 3
@@ -54,6 +55,7 @@ circleArr.forEach((circle) => {
     }
   });
 });
+
 // Retrieve activity data
 
 function handleActivity() {
@@ -73,8 +75,6 @@ function activityData(data) {
   typeActivity.textContent += randomItem.type.toUpperCase();
 
   refreshActivity.addEventListener("click", (e) => {
-   
-
     // Change random activity by using a different variable
 
     let randomAct = data[Math.floor(Math.random() * data.length)];
@@ -88,18 +88,13 @@ function activityData(data) {
     typeActivity.textContent += randomAct.type.toUpperCase();
   });
 }
+// Comment elements
 
-//append circles to circleWrapper
-
-mainDiv.append(circleWrapper);
+let commentsWrapper = document.querySelector(".comments-wrapper");
 
 //Initialize comment form and add submit event
 
 let form = document.querySelector("#comment-form");
-
-// Comment elements
-
-let commentsWrapper = document.querySelector(".comments-wrapper");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
