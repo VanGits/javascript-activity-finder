@@ -36,7 +36,7 @@ circleArr.map((circle) => {
   // Circle mousedown event
 
   circle.addEventListener("mousedown", (e) => {
-    e.preventDefault();
+   
     console.log(e, parseInt(circle.innerText));
 
     //handle response if boredness scale is less than 3
@@ -72,7 +72,7 @@ function activityData(data) {
   typeActivity.textContent += randomItem.type.toUpperCase();
 
   refreshActivity.addEventListener("click", (e) => {
-    e.preventDefault();
+   
 
     // Change random activity by using a different variable
 
