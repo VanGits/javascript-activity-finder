@@ -108,7 +108,7 @@ function handleSubmit(e) {
     commentInput: input.value,
   };
   if (input.value !== "") {
-    displayComments(comments);
+    
     postComment(comments);
   }
 }
@@ -132,7 +132,7 @@ function postComment(commentsObj) {
     body: JSON.stringify(commentsObj),
   })
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((data) => displayComments(data));
 }
 
 function displayComments(comment) {
