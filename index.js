@@ -118,7 +118,7 @@ function handleSubmit(e) {
 function getComments() {
   fetch("http://localhost:3000/comments")
     .then((res) => res.json())
-    .then((data) => data.forEach((comment) => displayComments(comment)));
+    .then((data) => data.forEach((comment) => displayComment(comment)));
 }
 getComments();
 
@@ -132,16 +132,16 @@ function postComment(commentsObj) {
     body: JSON.stringify(commentsObj),
   })
     .then((res) => res.json())
-    .then((data) => displayComments(data));
+    .then((data) => displayComment(data));
 }
 
-function displayComments(comment) {
+function displayComment(comment) {
   let commentsDiv = document.querySelector(".comment-section");
   let showComment = document.createElement("div");
   let commentText = document.createElement("h4");
 
   // Add db.json's comment object to h4 text content
-  
+
   commentText.textContent += comment.commentInput;
   showComment.appendChild(commentText);
 
