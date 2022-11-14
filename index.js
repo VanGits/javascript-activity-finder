@@ -155,8 +155,8 @@ let halfCircle = document.querySelector(".fa-circle-half-stroke");
 
 halfCircle.addEventListener("click", toggleDarkMode);
 
-function toggleDarkMode(e) {
-  e.preventDefault();
+function toggleDarkMode() {
+ 
   document.body.classList.add("body-darkMode");
   document.querySelector(".main-h2").classList.add("darkMode");
 

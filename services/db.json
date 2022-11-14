@@ -209,6 +209,17 @@
     }
   ],
   "comments": [
-   
+    {
+      "commentInput": "Nice app",
+      "id": 1
+    },
+    {
+      "commentInput": "test",
+      "id": 2
+    },
+    {
+      "commentInput": "a",
+      "id": 3
+    }
   ]
 }
