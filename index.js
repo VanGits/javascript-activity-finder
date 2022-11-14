@@ -11,7 +11,8 @@ let acceptedResDiv = document.getElementById("accepted-response");
 let acceptedRes = document.querySelector(".response-2");
 let suggestActivity = document.querySelector(".activity-response");
 let typeActivity = document.querySelector(".type-response");
-let refreshActivity = document.querySelector(".arrow-wrapper");
+let clearActivity = document.querySelector(".arrow-wrapper");
+
 
 // Initialize circle array
 
@@ -38,8 +39,6 @@ circleArr.forEach((circle) => {
   // Circle mousedown event
 
   circle.addEventListener("mousedown", (e) => {
-    console.log(e, parseInt(circle.innerText));
-
     //handle response if boredness scale is less than 3
 
     if (e && parseInt(circle.innerText) < 3) {
@@ -49,8 +48,8 @@ circleArr.forEach((circle) => {
       //handle response if boredness scale is more or equal to 3
     } else {
       mainDiv.style.display = "none";
-      refreshActivity.style.display = "flex";
-      commentsWrapper.style.display = "none";
+      clearActivity.style.display = "flex";
+     
       handleActivity();
     }
   });
@@ -61,7 +60,9 @@ circleArr.forEach((circle) => {
 function handleActivity() {
   fetch("http://localhost:3000/activities")
     .then((res) => res.json())
-    .then((data) => activityData(data));
+    .then((data) => {
+      activityData(data);
+    });
 }
 
 function activityData(data) {
@@ -74,7 +75,7 @@ function activityData(data) {
   suggestActivity.textContent += randomItem.activity;
   typeActivity.textContent += randomItem.type.toUpperCase();
 
-  refreshActivity.addEventListener("click", (e) => {
+  clearActivity.addEventListener("click", () => {
     // Change random activity by using a different variable
 
     let randomAct = data[Math.floor(Math.random() * data.length)];
@@ -96,50 +97,55 @@ let commentsWrapper = document.querySelector(".comments-wrapper");
 
 let form = document.querySelector("#comment-form");
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(e) {
   e.preventDefault();
-
   const input = document.querySelector("input#comment-input");
-
-  const comment = {
+  const comments = {
     // set comment key to whatever was put in input (input.value)
 
     commentInput: input.value,
   };
   if (input.value !== "") {
-    fetch("http://localhost:3000/comments", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(comment),
-    });
+    displayComments(comments);
+    postComment(comments);
   }
-});
+}
 
-// Get comment data from db.json
+// Fetch comments data
 
 function getComments() {
   fetch("http://localhost:3000/comments")
     .then((res) => res.json())
-    .then((comments) => displayComments(comments));
+    .then((data) => data.forEach((comment) => displayComments(comment)));
 }
 getComments();
 
-// Display data to the DOM derived from function getComments
+// Use post method to bring new data to the database
+function postComment(commentsObj) {
+  fetch("http://localhost:3000/comments", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(commentsObj),
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+}
 
-function displayComments(comments) {
-  comments.map((text) => {
-    let commentsDiv = document.querySelector(".comment-section");
-    let showComment = document.createElement("div");
-    let commentText = document.createElement("h4");
+function displayComments(comment) {
+  let commentsDiv = document.querySelector(".comment-section");
+  let showComment = document.createElement("div");
+  let commentText = document.createElement("h4");
 
-    // Add db.json's comment object to h4 text content
-    commentText.textContent += text.commentInput;
-    showComment.appendChild(commentText);
+  // Add db.json's comment object to h4 text content
+  console.log(comment);
+  commentText.textContent += comment.commentInput;
+  showComment.appendChild(commentText);
 
-    commentsDiv.appendChild(showComment);
-  });
+  commentsDiv.appendChild(showComment);
 }
 
 // Initialize dark mode icon
@@ -161,4 +167,23 @@ function toggleDarkMode(e) {
     document.body.classList.remove("body-darkMode");
     document.querySelector(".main-h2").classList.remove("darkMode");
   }
+}
+
+// Add back arrow and event
+
+let backArrow = document.querySelector(".fa-circle-arrow-left")
+
+backArrow.addEventListener("click", handleBack)
+
+function handleBack(){
+  acceptedRes.textContent = ""
+  mainDiv.style.display = "flex"
+  commentsWrapper.style.display = "flex";
+  clearActivity.style.display = "none";
+  acceptedResDiv.style.opacity = "0"
+  acceptedResDiv.style.display = "none"
+  firstResponse.textContent = ""
+  suggestActivity.textContent = ""
+  typeActivity.textContent = ""
+
 }

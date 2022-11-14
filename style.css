@@ -14,30 +14,26 @@ body {
 }
 
 body {
-    
   background-image: url("./assets/lightMode.svg");
   animation: fadeIn ease 2s;
   transition: all 100ms ease;
- 
-  
 }
 
-.body-darkMode{
-    background-image: url("./assets/darkMode.svg")
+.body-darkMode {
+  background-image: url("./assets/darkMode.svg");
 }
 
-.darkMode{
-    color: white;
-
+.darkMode {
+  color: white;
 }
 
 @keyframes fadeIn {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .main-page {
@@ -47,11 +43,11 @@ body {
   flex-direction: column;
   width: 100%;
   height: 85%;
-  
-
 }
 
-#main-div, #denied-response, #accepted-response {
+#main-div,
+#denied-response,
+#accepted-response {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,36 +57,32 @@ body {
   justify-self: flex-end;
 }
 
-#accepted-response{
+#accepted-response {
   background-color: #33a474;
   padding: 32px 32px;
   border-radius: 8px;
   opacity: 0;
   display: none;
-
-  
 }
 
-#accepted-response h1{
+#accepted-response h1 {
   color: white;
   font-family: "Poppins";
 }
 
 #main-div .h2 {
   margin: 24px;
-  
 }
 
-#main-div{
+#main-div {
   position: relative;
   margin-top: 24px;
 }
 
-#denied-response h1{
-    font-size: 32px;
-    color: #df4040;
-    font-family: "Poppins";
-    
+#denied-response h1 {
+  font-size: 32px;
+  color: #df4040;
+  font-family: "Poppins";
 }
 
 .circleWrapper {
@@ -118,20 +110,26 @@ body {
   cursor: pointer;
 }
 
-i{
-    font-size: 32px;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 24px;
+.fa-circle-half-stroke {
+  font-size: 32px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  
+}
+i {
+  font-size: 32px;
+  cursor: pointer;
+  position: absolute;
+  margin: 24px;
 }
 
-.response-2{
-   border-bottom: 2px solid white;
+.response-2 {
+  border-bottom: 2px solid white;
 }
 
-.arrow-wrapper{
+.arrow-wrapper {
   max-width: 60px;
   width: 100%;
   height: 60px;
@@ -145,70 +143,59 @@ i{
   display: none;
   transition: all 500ms ease;
   cursor: pointer;
-  
-  
 }
 
-@keyframes rotate{
-  0%{
+@keyframes rotate {
+  0% {
     transform: rotate(0deg);
   }
-  50%{
+  50% {
     transform: rotate(240deg);
   }
 }
-.fa-arrow-rotate-right{
+.fa-arrow-rotate-right {
   position: relative;
-  
 }
 
-.arrow-wrapper:hover{
+.arrow-wrapper:hover {
   animation: rotate 1000ms ease;
-  
 }
 
-.activity-response{
- 
+.activity-response {
   font-size: 22px;
   margin-top: 12px;
   color: white;
   font-family: "Poppins";
 }
 
-.type-response{
+.type-response {
   font-style: italic;
-  color:aliceblue;
+  color: aliceblue;
   font-size: 32px;
   margin-top: 42px;
- 
 }
 
-.comment-section{
+.comment-section {
   max-width: 600px;
   width: 100%;
   display: flex;
-  
+
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
-  
- 
- 
 }
 
-.comment-form{
-  
+.comment-form {
   width: 100%;
   display: flex;
-  
+
   align-items: center;
   justify-content: center;
   flex-direction: column;
   position: relative;
 }
 
-input{
+input {
   border: none;
   max-width: 800px;
   width: 100%;
@@ -217,24 +204,21 @@ input{
   border: 1px solid grey;
   border-radius: 3px;
   padding: 12px;
-
 }
 
-.comments-wrapper{
+.comments-wrapper {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-
 }
 
-.comment-section{
-  
+.comment-section {
   width: 100%;
 }
 
-.comment-section div{
+.comment-section div {
   background-color: #df4040;
   color: white;
 
@@ -251,11 +235,11 @@ input{
   overflow-wrap: break-word;
 }
 
-.comment-section h4{
+.comment-section h4 {
   width: 100%;
 }
 
-button{
+button {
   width: 50px;
   height: 50px;
   display: flex;
@@ -269,7 +253,7 @@ button{
   border: none;
 }
 
-.fa-paper-plane{
+.fa-paper-plane {
   font-size: 24px;
   position: relative;
 }
@@ -278,4 +262,12 @@ input:focus {
   outline-width: 0;
 }
 
-
+.fa-circle-arrow-left {
+  bottom: 0;
+  left: 0;
+  
+  z-index: 1000;
+  position: absolute;
+  color: rgb(255, 136, 0);
+  font-size: 48px;
+}
