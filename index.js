@@ -141,7 +141,7 @@ function displayComments(comment) {
   let commentText = document.createElement("h4");
 
   // Add db.json's comment object to h4 text content
-  console.log(comment);
+  
   commentText.textContent += comment.commentInput;
   showComment.appendChild(commentText);
 
